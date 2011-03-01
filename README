@@ -3,3 +3,5 @@ lightpanel is a server and client project for controlling a custom build LED pan
 The server is written in Java and does the basic and boring tasks of receiving instructions over a socket to switch on a specific LED at row+col or an exact index.
 
 The client is written in Ruby for running strobes, fades and scrolling on the LED panel.
+
+Checkout http://callumj.com/post/introducing-lightpanel.html for more info
