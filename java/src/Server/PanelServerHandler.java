@@ -50,6 +50,8 @@ public class PanelServerHandler extends SimpleChannelUpstreamHandler
 		
 		for (String line : command)
 		{
+			System.out.println(line);
+			
 			if (lastFail)
 				line = previousString + line;
 			
