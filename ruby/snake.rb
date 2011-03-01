@@ -13,7 +13,7 @@ sleepTime = 0.1 if sleepTime == nil
 
 socket.print("#{previousRow} #{previousCol} 100\r\n")
 socket.flush
-sleep sleepTime
+sleep sleepTime.to_f
 
 while (true)    
   rowMove = previousRow
@@ -40,5 +40,5 @@ while (true)
   
   socket.print("#{previousRow} #{previousCol} 100\r\n")
   socket.flush
-  sleep sleepTime
+  sleep sleepTime.to_f
 end
