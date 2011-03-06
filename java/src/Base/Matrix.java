@@ -55,8 +55,9 @@ public class Matrix {
 		double rowConversion = row / 100.0;
 		double colConversion = col / 100.0;
 		
-		int actualRow = (int)rowConversion * ledMatrix.length;
-		int actualCol = (int)colConversion * ledMatrix[0].length;
+		
+		int actualRow = (int)(rowConversion * ledMatrix.length);
+		int actualCol = (int)(colConversion * ledMatrix[0].length);
 		
 		setLED(actualRow, actualCol, brightness);
 	}
