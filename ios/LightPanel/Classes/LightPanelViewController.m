@@ -11,8 +11,11 @@
 @implementation LightPanelViewController
 
 @synthesize touchView;
+@synthesize modeSelector;
+
 @synthesize serverAddress;
 @synthesize serverPort;
+@synthesize penMode;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -64,8 +67,10 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	penMode = YES;
 	[self loadSettings];
 	[self openSocket];
+	[self syncModeWithUI];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTouchFromNotification:) name:kTouchBeganForTouchView object:nil];
 }
 
@@ -76,7 +81,11 @@
 	CGFloat percentY = (tPoint.y / self.touchView.bounds.size.height) * 100;
 	CGFloat percentX = (tPoint.x / self.touchView.bounds.size.width) * 100;
 	
-	NSString *sendData = [[NSString alloc] initWithFormat:@"%.2f%% %.2f%% 100\r\n", percentY, percentX];
+	int brightness = 100;
+	if (!penMode)
+		brightness = 0;
+	
+	NSString *sendData = [[NSString alloc] initWithFormat:@"%.2f%% %.2f%% %d\r\n", percentY, percentX, brightness];
 	[self sendSocket:sendData];
 	[sendData autorelease];
 }
@@ -102,6 +111,26 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+-(IBAction)switchPen:(id)sender
+{
+	penMode = !penMode;
+	[self syncModeWithUI];
+}
+
+-(void)syncModeWithUI
+{
+	UIImage *buttonImage;
+	if (penMode)
+		buttonImage = [UIImage imageNamed:@"pencil.png"];
+	else
+		buttonImage = [UIImage imageNamed:@"erase.png"];
+	
+	[modeSelector setImage:buttonImage forState:UIControlStateNormal];
+	[modeSelector setImage:buttonImage forState:UIControlStateHighlighted];
+	[modeSelector setImage:buttonImage forState:UIControlStateSelected];
+	[buttonImage autorelease];
 }
 
 @end

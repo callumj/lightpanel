@@ -17,6 +17,8 @@
 		28D7ACF80DDB3853001CB0EB /* LightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* LightPanelViewController.m */; };
 		B068122F1323452300E9770B /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B068122E1323452300E9770B /* TouchView.m */; };
 		B06813661323EAF300E9770B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B06813651323EAF300E9770B /* Settings.bundle */; };
+		B0EBFDA91324E58200BE6C9F /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EBFDA81324E58200BE6C9F /* pencil.png */; };
+		B0EBFDE01324EC5C00BE6C9F /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EBFDDF1324EC5C00BE6C9F /* erase.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B068122D1323452300E9770B /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		B068122E1323452300E9770B /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
 		B06813651323EAF300E9770B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B0EBFDA81324E58200BE6C9F /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		B0EBFDDF1324EC5C00BE6C9F /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0EBFDDF1324EC5C00BE6C9F /* erase.png */,
+				B0EBFDA81324E58200BE6C9F /* pencil.png */,
 				2899E5210DE3E06400AC0155 /* LightPanelViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* LightPanel-Info.plist */,
@@ -167,6 +173,8 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* LightPanelViewController.xib in Resources */,
 				B06813661323EAF300E9770B /* Settings.bundle in Resources */,
+				B0EBFDA91324E58200BE6C9F /* pencil.png in Resources */,
+				B0EBFDE01324EC5C00BE6C9F /* erase.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

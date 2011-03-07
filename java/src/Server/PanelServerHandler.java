@@ -49,9 +49,7 @@ public class PanelServerHandler extends SimpleChannelUpstreamHandler
 		String[] command = lineSplit.split(message);
 		
 		for (String line : command)
-		{
-			System.out.println(line);
-						
+		{						
 			if (lastFail)
 				line = previousString + line;
 			
