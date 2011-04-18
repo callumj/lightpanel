@@ -1,6 +1,7 @@
 class Panel
   
-  def snakeDecay(sleepTime = nil)
+  def snake_decay(args = {})
+    sleepTime = args[:sleep_time]
     sleepTime = 0.5 if sleepTime == nil
     sleepTime = sleepTime.to_f 
     

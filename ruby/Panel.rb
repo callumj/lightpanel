@@ -3,6 +3,7 @@ require 'socket'
 class Panel
   NUMROWS = 9
   NUMCOLS = 21
+  MAXINDEX = NUMCOLS * NUMROWS
   
   attr_accessor :threads
   

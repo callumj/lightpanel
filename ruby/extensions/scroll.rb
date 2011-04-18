@@ -1,6 +1,7 @@
 class Panel
   
-  def scroll(sleepTime = nil)
+  def scroll(args = {})
+    sleepTime = args[:sleep_time]
     sleepTime = 0.5 if sleepTime == nil
     sleepTime = sleepTime.to_f 
     

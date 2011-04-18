@@ -1,6 +1,7 @@
 class Panel
   
-  def strobe(sleepTime = nil)
+  def strobe(args = {})
+    sleepTime = args[:sleep_time]
     sleepTime = 0.1 if sleepTime == nil
     sleepTime = sleepTime.to_f 
     
