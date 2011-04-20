@@ -1,3 +1,5 @@
+h1. Lightpanel
+
 lightpanel is a server and client project for controlling a custom build LED panel.
 
 The server is written in Java and does the basic and boring tasks of receiving instructions over a socket to switch on a specific LED at row+col or an exact index.
@@ -5,3 +7,8 @@ The server is written in Java and does the basic and boring tasks of receiving i
 The client is written in Ruby for running strobes, fades and scrolling on the LED panel.
 
 Checkout http://callumj.com/post/introducing-lightpanel.html for more info
+
+h2. iOS application
+
+Now included is an iOS application which runs on both the iPhone and iPad. It is currently built for drawing on the LED panel over the Java socket server.
+You can check out the screenshot included in this repo or "check out this YouTube video":http://www.youtube.com/watch?v=2XU6GEP2J9Q

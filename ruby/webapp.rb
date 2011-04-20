@@ -7,7 +7,8 @@ $LIGHTPANEL_INSTANCE = Panel.new
 
 get "/c/:command" do
   $LIGHTPANEL_INSTANCE.send(params[:command])
-  puts ''
+  
+  ''
 end
 
 get %r{/c/([\w]+)/(.+)} do
@@ -28,9 +29,7 @@ get %r{/c/([\w]+)/(.+)} do
       is_param = !is_param
     end
   end
-  
-  puts method_args
-  
+    
   if (method_args == nil)
     $LIGHTPANEL_INSTANCE.send(method_name)
   else
