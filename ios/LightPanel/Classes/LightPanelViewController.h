@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "TouchView.h"
 #import "LightPanelAppDelegate.h"
+#import "ActionsPanelViewController.h"
 
 @interface LightPanelViewController : UIViewController {
 
 	IBOutlet TouchView						*touchView;
 	IBOutlet UIButton						*modeSelector;
+    IBOutlet UIButton                       *switchToActions;
 	
 	NSError									*errorStream;
 	CFReadStreamRef							writeStream;
@@ -24,6 +26,7 @@
 
 @property (nonatomic, retain) IBOutlet TouchView *touchView;
 @property (nonatomic, retain) IBOutlet UIButton *modeSelector;
+@property (nonatomic, retain) IBOutlet UIButton *switchToActions;
 
 @property (nonatomic, retain) NSString *serverAddress;
 @property (nonatomic)			int		serverPort;
@@ -33,8 +36,10 @@
 -(void)sendSocket:(NSString *)data;
 -(void)handleTouchFromNotification:(NSNotification *)notification;
 -(void)loadSettings;
--(IBAction)switchPen:(id)sender;
 -(void)syncModeWithUI;
+
+-(IBAction)switchPen:(id)sender;
+-(IBAction)showActions:(id)sender;
 
 @end
 

@@ -12,6 +12,7 @@
 
 @synthesize touchView;
 @synthesize modeSelector;
+@synthesize switchToActions;
 
 @synthesize serverAddress;
 @synthesize serverPort;
@@ -53,12 +54,7 @@
 
 -(void)loadSettings
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
-	//set user defaults
-	NSDictionary *initialDefaults = [[NSDictionary alloc] initWithObjectsAndKeys:@"192.168.1.8", @"server_addr", @"8080", @"server_port", nil];
-	[defaults registerDefaults:initialDefaults];
-	
+	NSUserDefaults *defaults = [[LightPanelAppDelegate instance] getSettings];
 	self.serverAddress = [[NSString alloc] initWithString:[defaults stringForKey:@"server_addr"]];
 	self.serverPort = [defaults integerForKey:@"server_port"];
 }
@@ -117,6 +113,11 @@
 {
 	penMode = !penMode;
 	[self syncModeWithUI];
+}
+
+-(IBAction)showActions:(id)sender
+{
+    [[LightPanelAppDelegate instance] showActionsPanel];
 }
 
 -(void)syncModeWithUI

@@ -9,21 +9,62 @@
 #import "LightPanelAppDelegate.h"
 #import "LightPanelViewController.h"
 
+static LightPanelAppDelegate *_delegate = nil;
+
 @implementation LightPanelAppDelegate
 
 @synthesize window;
 @synthesize viewController;
+@synthesize actionPanelViewController;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
+-(id)init
+{
+    self = [super init];
+    _delegate = self;
+    return self;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after app launch. 
     [self.window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
 
 	return YES;
+}
+
+-(void)showActionsPanel
+{
+    if (actionPanelViewController == nil)
+        actionPanelViewController = [[ActionsPanelViewController alloc] init];
+    
+    [self.viewController.view removeFromSuperview];
+    [self.window addSubview:actionPanelViewController.view];
+    [self.window makeKeyAndVisible];
+}
+
+-(void)removeActionsPanel
+{
+    if (actionPanelViewController != nil)
+        [actionPanelViewController.view removeFromSuperview];
+    
+    [self.window addSubview:viewController.view];
+    [self.window makeKeyAndVisible];
+}
+
+-(NSUserDefaults *)getSettings
+{
+    if (defaults == nil)
+    {
+        defaults = [[NSUserDefaults standardUserDefaults] retain];
+        //set user defaults
+        NSDictionary *initialDefaults = [[NSDictionary alloc] initWithObjectsAndKeys:@"192.168.1.8", @"server_addr", @"8080", @"server_port", @"192.168.1.18", @"web_server_addr", @"4567", @"web_server_port", nil];
+        [defaults registerDefaults:initialDefaults];
+    }
+    
+    return defaults;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -38,6 +79,7 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    _delegate = self;
 }
 
 
@@ -63,6 +105,11 @@
     [viewController release];
     [window release];
     [super dealloc];
+}
+
++(LightPanelAppDelegate *)instance
+{
+    return _delegate;
 }
 
 

@@ -54,6 +54,46 @@
 			<key>AutocorrectionType</key>
 			<string>No</string>
 		</dict>
+        <dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Web server host</string>
+			<key>Identifier</key>
+			<string>web_server_addr</string>
+			<key>Key</key>
+			<string>web_server_addr</string>
+			<key>DefaultValue</key>
+			<string>192.168.1.8</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>Alphabet</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
+        <dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Web server port</string>
+			<key>Identifier</key>
+			<string>web_server_port</string>
+			<key>Key</key>
+			<string>web_server_port</string>
+			<key>DefaultValue</key>
+			<string>4567</string>
+			<key>IsSecure</key>
+			<false/>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+		</dict>
 	</array>
 </dict>
 </plist>

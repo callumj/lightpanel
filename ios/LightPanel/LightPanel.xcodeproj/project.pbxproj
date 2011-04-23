@@ -15,6 +15,10 @@
 		2899E5220DE3E06400AC0155 /* LightPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* LightPanelViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* LightPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* LightPanelViewController.m */; };
+		B0051ADB1361864D000AC012 /* ActionsPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0051AD91361864D000AC012 /* ActionsPanelViewController.m */; };
+		B0051ADC1361864D000AC012 /* ActionsPanelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0051ADA1361864D000AC012 /* ActionsPanelViewController.xib */; };
+		B030E4F313628930001CC973 /* other.png in Resources */ = {isa = PBXBuildFile; fileRef = B030E4F213628930001CC973 /* other.png */; };
+		B030E4F513628C03001CC973 /* rectbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B030E4F413628C03001CC973 /* rectbutton.png */; };
 		B068122F1323452300E9770B /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B068122E1323452300E9770B /* TouchView.m */; };
 		B06813661323EAF300E9770B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B06813651323EAF300E9770B /* Settings.bundle */; };
 		B082F4701326590F00EF06E1 /* led-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B082F46F1326590F00EF06E1 /* led-icon.png */; };
@@ -36,9 +40,14 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* LightPanel_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LightPanel_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LightPanel-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LightPanel-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		B0051AD81361864D000AC012 /* ActionsPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActionsPanelViewController.h; path = ../ActionsPanelViewController.h; sourceTree = "<group>"; };
+		B0051AD91361864D000AC012 /* ActionsPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionsPanelViewController.m; path = ../ActionsPanelViewController.m; sourceTree = "<group>"; };
+		B0051ADA1361864D000AC012 /* ActionsPanelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionsPanelViewController.xib; sourceTree = "<group>"; };
+		B030E4F213628930001CC973 /* other.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = other.png; sourceTree = "<group>"; };
+		B030E4F413628C03001CC973 /* rectbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rectbutton.png; sourceTree = "<group>"; };
 		B068122D1323452300E9770B /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		B068122E1323452300E9770B /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
-		B06813651323EAF300E9770B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B06813651323EAF300E9770B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Classes/Settings.bundle; sourceTree = "<group>"; };
 		B082F46F1326590F00EF06E1 /* led-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "led-icon.png"; sourceTree = "<group>"; };
 		B0EBFDA81324E58200BE6C9F /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
 		B0EBFDDF1324EC5C00BE6C9F /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
@@ -61,7 +70,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B06813651323EAF300E9770B /* Settings.bundle */,
+				B0051AD81361864D000AC012 /* ActionsPanelViewController.h */,
+				B0051AD91361864D000AC012 /* ActionsPanelViewController.m */,
 				1D3623240D0F684500981E51 /* LightPanelAppDelegate.h */,
 				1D3623250D0F684500981E51 /* LightPanelAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* LightPanelViewController.h */,
@@ -104,12 +114,16 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B06813651323EAF300E9770B /* Settings.bundle */,
+				B030E4F413628C03001CC973 /* rectbutton.png */,
+				B030E4F213628930001CC973 /* other.png */,
 				B082F46F1326590F00EF06E1 /* led-icon.png */,
 				B0EBFDDF1324EC5C00BE6C9F /* erase.png */,
 				B0EBFDA81324E58200BE6C9F /* pencil.png */,
 				2899E5210DE3E06400AC0155 /* LightPanelViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* LightPanel-Info.plist */,
+				B0051ADA1361864D000AC012 /* ActionsPanelViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -179,6 +193,9 @@
 				B0EBFDA91324E58200BE6C9F /* pencil.png in Resources */,
 				B0EBFDE01324EC5C00BE6C9F /* erase.png in Resources */,
 				B082F4701326590F00EF06E1 /* led-icon.png in Resources */,
+				B0051ADC1361864D000AC012 /* ActionsPanelViewController.xib in Resources */,
+				B030E4F313628930001CC973 /* other.png in Resources */,
+				B030E4F513628C03001CC973 /* rectbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +210,7 @@
 				1D3623260D0F684500981E51 /* LightPanelAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* LightPanelViewController.m in Sources */,
 				B068122F1323452300E9770B /* TouchView.m in Sources */,
+				B0051ADB1361864D000AC012 /* ActionsPanelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +226,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LightPanel_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LightPanel-Info.plist";
 				PRODUCT_NAME = LightPanel;
 			};
@@ -220,6 +239,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LightPanel_Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LightPanel-Info.plist";
 				PRODUCT_NAME = LightPanel;
 				VALIDATE_PRODUCT = YES;
