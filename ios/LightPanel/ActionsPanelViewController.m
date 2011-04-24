@@ -83,8 +83,10 @@
     return args;
 }
 
--(IBAction)performAction:(id)sender
+-(IBAction)performActionOnTouchDown:(id)sender
 {
+    lastActionPerformed = [[NSDate date] retain];
+    
     if (sender == strobeButton)
         [self runActionOnServer:@"strobe" withArgs:[self constructArgs]];
     else if (sender == allOnButton)
@@ -101,6 +103,27 @@
         [self runActionOnServer:@"fade_in" withArgs:[self constructArgs]];
     else if (sender == scrollButton)
         [self runActionOnServer:@"scroll" withArgs:[self constructArgs]];
+}
+
+-(IBAction)performActionOnTouchUpInside:(id)sender
+{
+    NSTimeInterval difference = [[NSDate date] timeIntervalSinceDate:lastActionPerformed];
+    
+    if (difference > 0.2)
+    {
+        if (sender != allOffButton && sender != allOnButton && sender != stopButton)
+        {
+            [self runActionOnServer:@"stop" withArgs:@"newest/true"];
+        }
+        else if (sender == allOnButton)
+        {
+            [self runActionOnServer:@"allOff" withArgs:nil];
+        }
+        else if (sender == stopButton && difference > 0.5)
+        {
+            [self runActionOnServer:@"stop" withArgs:@"fast/true"];
+        }
+    }
 }
 
 -(IBAction)sliderChangedValue:(id)sender
@@ -130,6 +153,7 @@
     // create the connection with the request
     // and start loading the data
     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    [theConnection autorelease];
 }
 
 @end

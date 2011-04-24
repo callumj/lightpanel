@@ -1,5 +1,9 @@
 require 'socket'
 
+def to_bool(value)
+  return [true, "true", 1, "1", "T", "t"].include?(value.class == String ? value.downcase : value)
+end
+
 class Panel
   NUMROWS = 9
   NUMCOLS = 21
@@ -61,27 +65,39 @@ class Panel
     
     args = {:oldest => true} if args == nil
     
-    if (args[:oldest] == true || args[:newest] == true || args[:index] != nil)
+    if (to_bool(args[:oldest]) == true || to_bool(args[:newest]) == true || args[:index] != nil)
       threadToEnd = @threads[0]
-      threadToEnd = @threads[@threads.size - 1] if args[:newest] == true
+      threadToEnd = @threads[@threads.size - 1] if to_bool(args[:newest]) == true
       threadToEnd = @threads[args[:index]] if args[:index] != nil
       
-      threadToEnd[:stop] = true if (args[:fast] != true)
-      @threads.delete(threadToEnd).kill if (args[:fast] == true)
+      threadToEnd[:stop] = true if (to_bool(args[:fast]) != true)
+      @threads.delete(threadToEnd).kill if (to_bool(args[:fast]) == true)
       return
     end
     
     if (args[:all] == true)
       @threads.each do |runningThread| 
-        runningThread[:stop] = true if (args[:fast] != true)
-        runningThread.kill if (args[:fast] == true)
+        runningThread[:stop] = true if (to_bool(args[:fast]) != true)
+        runningThread.kill if (to_bool(args[:fast]) == true)
       end
       
-      @threads.clear if (args[:fast] == true)
+      @threads.clear if (to_bool(args[:fast]) == true)
     end
   end
   
   def finished(threadObj)
     @threads.delete(threadObj)
+  end
+  
+  def renderArray(args = {})
+     return nil if args[:matrix] == nil
+     args[:row_offset] = 0 if args[:row_offset] == nil
+     args[:col_offset] = 0 if args[:col_offset] == nil
+     
+     for row in 0..(args[:matrix].size - 1) do
+       for col in 0..(args[:matrix][row].size - 1) do
+         set(:row => row + args[:row_offset].to_i, :col => col + args[:col_offset].to_i, :brightness => args[:matrix][row][col].to_i)
+       end
+     end
   end
 end

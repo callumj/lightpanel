@@ -62,6 +62,7 @@ static LightPanelAppDelegate *_delegate = nil;
         //set user defaults
         NSDictionary *initialDefaults = [[NSDictionary alloc] initWithObjectsAndKeys:@"192.168.1.8", @"server_addr", @"8080", @"server_port", @"192.168.1.18", @"web_server_addr", @"4567", @"web_server_port", nil];
         [defaults registerDefaults:initialDefaults];
+        [initialDefaults release];
     }
     
     return defaults;

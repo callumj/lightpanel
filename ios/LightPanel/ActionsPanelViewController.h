@@ -13,6 +13,7 @@
 @interface ActionsPanelViewController : UIViewController {
     NSString *webServerHost;
     int webServerPort;
+    NSDate *lastActionPerformed;
     
     IBOutlet UIButton *switchBackButton;
     IBOutlet UISlider *sleepSlider;
@@ -46,7 +47,8 @@
 @property (nonatomic, retain) IBOutlet UILabel *sleepLabel;
 
 -(IBAction)switchBackToTouchView:(id)sender;
--(IBAction)performAction:(id)sender;
+-(IBAction)performActionOnTouchDown:(id)sender;
+-(IBAction)performActionOnTouchUpInside:(id)sender;
 -(IBAction)sliderChangedValue:(id)sender;
 
 -(NSString *)constructArgs;

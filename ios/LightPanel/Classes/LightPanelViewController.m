@@ -131,7 +131,6 @@
 	[modeSelector setImage:buttonImage forState:UIControlStateNormal];
 	[modeSelector setImage:buttonImage forState:UIControlStateHighlighted];
 	[modeSelector setImage:buttonImage forState:UIControlStateSelected];
-	[buttonImage autorelease];
 }
 
 @end

@@ -16,9 +16,9 @@ public class PanelServer
 {
 	public static void main(String[] args) throws Exception
 	{
-		final Panel device1 = new Panel(41297);
+		final Panel device1 = new Panel(40885);
 		final Panel device2 = new Panel(40862);
-		final Panel device3 = new Panel(40885);
+		final Panel device3 = new Panel(41297);
 		
 		Panel[][] panelArray = {{device1, device2, device3}};
 		
